@@ -42,11 +42,18 @@ color: #101828;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    /* identical to box height, or 150% */
-    text-align: center;
 }
 
 .i4g{
     width: 132.13px;
     height: 32px;
+}
+
+.i4gg{
+    width: 132.13px;
+    height: 20px;
+}
+
+span{
+    display:hidden;
 }
