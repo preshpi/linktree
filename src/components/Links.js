@@ -26,7 +26,7 @@ function Links() {
               <div className="links lg:w-[1152px] w-[343px] hover:bg-gray-300 hover:border-2 hover:border-[#98A2B3] bg-[#EAECF0] transistion-color">
                 <div className="grid gird-cols-2">
                   <h1 className="text-center link text-[#101828]">Zuri Books</h1>
-                  <span className="text-center text-[#98A2B3] italic  ">Find books about desings and code</span>
+                  <span className="text-center text-[#98A2B3] italic">Find books about desings and code</span>
                 </div>
               </div> 
             </a>
@@ -35,7 +35,7 @@ function Links() {
               <div className="links lg:w-[1152px] w-[343px] hover:bg-gray-300 hover:border-2 hover:border-[#98A2B3] bg-[#EAECF0] transistion-color">
               <div className="grid gird-cols-2">
                 <h1 className="text-center link text-[#101828]">Python Books</h1>
-                <span className="text-center text-[#98A2B3] italic  ">Check out my book for coding help</span>
+                <span className="text-center text-[#98A2B3] italic">Check out my book for coding help</span>
               </div>
               </div> 
             </a>
@@ -44,7 +44,7 @@ function Links() {
                <div className="links lg:w-[1152px] w-[343px] hover:bg-gray-300 hover:border-2 hover:border-[#98A2B3] bg-[#EAECF0] transistion-color">
                <div className="grid gird-cols-2">
                  <h1 className="text-center link text-[#101828]  mt-3">Background Check for Coders</h1>
-                 <span className="text-center text-[#98A2B3] italic  mb-3  ">Hope the bugs aren't bugging you</span>
+                 <span className="text-center text-[#98A2B3] italic  mb-3 ">Hope the bugs aren't bugging you</span>
               </div>
               </div>
             </a>    
@@ -53,7 +53,7 @@ function Links() {
               <div className="links lg:w-[1152px] w-[343px] hover:bg-gray-300 hover:border-2 hover:border-[#98A2B3] bg-[#EAECF0] transistion-color">
               <div className="grid gird-cols-2">
                <h1 className="text-center link text-[#101828] mt-3">Design books</h1>
-               <span className="text-center text-[#98A2B3] italic mb-3  ">Get free design books offered by Zuri</span>
+               <span className="text-center text-[#98A2B3] italic mb-3 ">Get free design books offered by Zuri</span>
               </div>
               </div>  
             </a>
