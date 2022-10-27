@@ -4,15 +4,14 @@ function Footer() {
   return (
     <div className="grid place-items-center mt-5 h-[200px]">
 
-        <div className="flex gap-5 m-10">
-        
-      <a href="https://app.slack.com/client/T042F7V19Q8/D0484S11W1L/rimeto_profile/U04915HB52L" target="_blank" rel="noreferrer">
-        <img src="https://res.cloudinary.com/dpokiomqq/image/upload/v1666712488/MC04MC5qcGc_sckr5i.jpg" alt="slacklogo" className="w-12 h-8 object-cover cursor-pointer"/>
-      </a>
+        <div className="flex gap-5 m-10">    
+          <a href="https://app.slack.com/client/T042F7V19Q8/D0484S11W1L/rimeto_profile/U04915HB52L" target="_blank" rel="noreferrer">
+            <img src="https://res.cloudinary.com/dpokiomqq/image/upload/v1666712488/MC04MC5qcGc_sckr5i.jpg" alt="slacklogo" className="w-12 h-8 object-cover cursor-pointer"/>
+          </a>
 
-      <a href="https://github.com/preshpi" target="_blank" rel="noreferrer">
-        <img src="https://res.cloudinary.com/dpokiomqq/image/upload/v1666713118/GitHub-Mark_pmzq4e.png" alt="githublogo" className="w-12 h-9 object-cover cursor-pointer"/>
-      </a>
+          <a href="https://github.com/preshpi" target="_blank" rel="noreferrer">
+            <img src="https://res.cloudinary.com/dpokiomqq/image/upload/v1666713118/GitHub-Mark_pmzq4e.png" alt="githublogo" className="w-12 h-9 object-cover cursor-pointer"/>
+          </a>
         </div>
 
         <hr className="border-1 border-gray-300 lg:w-[1152px] w-[343px] mt-5"/>
