@@ -21,7 +21,7 @@ function Profile() {
 
 
         <h1 className="username mt-3" id="twitter">preshypie</h1>
-        {/* <h1 className="username mt-3" id="slack">Egwuenu Precious</h1> */}
+        {/* <h1 className="username mt-3" id="slack">preshypie (Egwuenu Precious)</h1> */}
         </div>    
     </div>
 
