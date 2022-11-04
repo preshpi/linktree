@@ -51,11 +51,10 @@ function Contact() {
 
     if(check.length===0){
       setError(true)
-
-
+      
     Swal.fire(
       'Opps!',
-      'Your form has been completed!',
+      'Your form has not been completed!',
       'error'
     )
     }else{
