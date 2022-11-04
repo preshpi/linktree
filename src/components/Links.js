@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function Links() {
   return (
     <div className="grid place-items-center">
@@ -57,6 +57,14 @@ function Links() {
               </div>
               </div>  
             </a>
+
+            <Link to="/contact"  id="contact">
+              <div className="links lg:w-[1152px] w-[343px] hover:bg-gray-300 hover:border-2 hover:border-[#98A2B3] bg-[#EAECF0] transistion-color">
+              <div className="grid gird-cols-2">
+               <h1 className="text-center link text-[#101828] mt-3">Contact Me</h1>
+              </div>
+              </div>  
+            </Link>
 
         </div>
     </div>

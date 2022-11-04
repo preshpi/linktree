@@ -1,14 +1,18 @@
 import './App.css';
-import Footer from './components/Footer';
-import Links from './components/Links';
-import Profile from './components/Profile';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Linktree from './pages/linktree';
+import Contact from './pages/Contact';
 function App() {
   return (
     <div>
-      <Profile/>
-      <Links/>
-      <Footer/>
+      <Router>
+          <Routes>
+          
+          <Route path="/" element={<Linktree/>}/>
+          <Route path="/contact" element={<Contact/>}/>
+          </Routes>        
+      </Router>
+
     </div>
   );
 }
