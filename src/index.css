@@ -152,10 +152,16 @@ span{
 .checkbox{
     width: 20px;
     height: 20px;
-    background: #FFFFFF;
     border-radius: 6px;
     border: 1px solid #D0D5DD;
 }
+
+/* input[type='checkbox'] {
+    accent-color: blue;
+    color:#F83F23;
+} */
+
+
 
 
 

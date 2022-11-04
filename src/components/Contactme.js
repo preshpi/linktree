@@ -16,42 +16,58 @@ function Contact() {
     setEmail(e.target.value);
   }
 
-
   const emailValidation=()=> {
     const regEx = /[a-zA-Z0-9,_%+-]+@[a-z0-9*-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
     if(regEx.test(email)){
       setEmailmessage("")
     }else if(!regEx.test(email) && email !== '') {
-      setEmailmessage("Email is not valid!");
+      
+      setEmailmessage("Email not valid!")
+
+
     }else{
       setEmailmessage("");
+
     }
   }
 
   const handleSubmit=(e) => {
     e.preventDefault();
     if(firstName.length===0||lastName.length===0||email.length===0||message.length===0){
+
+    Swal.fire(
+      'Opps!',
+      'Your form has not been completed!',
+      'error'
+    )
       setError(true)
+    }else{
+      Swal.fire(
+        'Good Job!',
+        'Your form has been submitted!',
+        'success' 
+        )
     }
 
     if(check.length===0){
       setError(true)
+
+
+    Swal.fire(
+      'Opps!',
+      'Your form has been completed!',
+      'error'
+    )
     }else{
       setDisable(false)
     }
+
 
     if(firstName&&lastName&&email&&message&&check){
       console.log("first Name:",firstName,"\nLast Name:", lastName, "\nEmail:", email,"\nMessage:", message,"\nCheckbox:", check); 
     }   
 
-  }
 
-  const submit = () => {
-    Swal.fire(
-      'Good job!',
-      'Your form has been submitted!',
-      'success'
-    )
   }
 
 
@@ -79,27 +95,27 @@ function Contact() {
 
           <div className="mt-3">
             <label className="name" for="email">Email</label>
-            <input onChange={e=>setEmail(e.target.value)}  className={error&& email.length<=0 ? 'errorname mt-3 w-[343px] lg:w-[720px] focus:outline-none border border-[#F83F23]' : 'inputname mt-3  w-[343px] lg:w-[348px] focus:outline-none focus:border focus:border-[#84CAFF]  border border-[#D0D5DD]' } id="email" placeholder="yourname@email.com" value={email} onChange={handleOnChange}/>
+            <input onChange={e=>setEmail(e.target.value)}  className={error&& email.length<=0 ? 'errorname mt-3 w-[343px] lg:w-[720px] focus:outline-none border border-[#F83F23]' : 'inputname mt-3  w-[343px] lg:w-[720px] focus:outline-none focus:border focus:border-[#84CAFF]  border border-[#D0D5DD]' } id="email" placeholder="yourname@email.com" value={email} onChange={handleOnChange}/>
             <p className="hint2 mt-2">{emailMessage}</p>
             {error&& email.length<=0 ? <p class="hint2 mt-2">Please enter your email</p> : ""}
           </div>
 
           <div className="mt-3">
             <label className="name" for="message">Message</label>
-            <textarea onChange={e=>setMessage(e.target.value)}  className={error&& message.length<=0 ? 'errormessage mt-3 w-[343px] lg:w-[720px] focus:outline-none border border-[#F83F23]' : 'messageinput mt-3  w-[343px] lg:w-[348px] focus:outline-none focus:border focus:border-[#84CAFF]  border border-[#D0D5DD]' } id="message" placeholder="Send me a message and I'll reply you as soon as possible..."></textarea>
+            <textarea onChange={e=>setMessage(e.target.value)}  className={error&& message.length<=0 ? 'errormessage mt-3 w-[343px] lg:w-[720px] focus:outline-none border border-[#F83F23]' : 'messageinput mt-3  w-[343px] lg:w-[720px] focus:outline-none focus:border focus:border-[#84CAFF]  border border-[#D0D5DD]' } id="message" placeholder="Send me a message and I'll reply you as soon as possible..."></textarea>
             {error&& message.length<=0 ?  <p class="hint2 mt-2">Please enter a message</p> : ""}
           </div>
 
           <div className="mt-3">
             <div className="flex">
-            <input onChange={e=>setCheck(e.target.value)} type="checkbox" id="text" className="checkbox mx-2 mb-3 ring-opacity-25  focus:ring-2 ring-[#84CAFF] focus:border-[#84CAFF]   border border-[#D0D5DD] focus:outline-none"/>
-            <label  for="text lg:w-[688px] w-[311px]">You agree to providing your data to Preshypie who may contact you.</label>
+            <input onChange={e=>setCheck(e.target.value)} type="checkbox" id="text" className="checkbox mx-2 mb-3 ring-opacity-25  focus:ring-2 ring-[#84CAFF] focus:border-[#84CAFF] border border-[#D0D5DD] focus:outline-none"/>
+            <label  for="text lg:w-[688px] w-[311px]">You agree to providing your data to Precious Egwuenu who may contact you.</label>
             </div>       
             {error&& check.length<=0 ?  <p class="hint2 mt-2 mx-2">check the box</p> : ""}
           </div>
 
-          <div onClick={submit}>
-            {disable ? <button id="btn__submit" onClick={emailValidation}  className="mt-3 w-[343px] lg:w-[720px] bg-[#84CAFF] ring-opacity-25  focus:ring-4 ring-[#84CAFF]">Send message</button> :  <button id="btn__submit" onClick={emailValidation}  className="mt-3 w-[343px] lg:w-[720px] bg-[#1570EF] ring-opacity-25  focus:ring-4 ring-[#1570EF]">Send message</button>}
+          <div>
+            {disable ? <button id="btn__submit" onClick={emailValidation}  className="mt-3 w-[343px] lg:w-[720px] bg-[#84CAFF] ring-opacity-25  focus:ring-4 ring-[#84CAFF]">Send message</button> :  <button id="btn__submit" onClick={emailValidation}  className="mt-3 w-[343px] lg:w-[720px] bg-[#1570EF] ring-opacity-25  focus:ring-4 ring-[#1570EF] text-[#FFFF]">Send message</button>}
           </div>
 
 
