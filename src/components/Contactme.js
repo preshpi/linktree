@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function Contact() {
   const [firstName, setFirstname] = useState('');
@@ -8,10 +10,12 @@ function Contact() {
   const [check, setCheck] = useState('');
   const [error, setError] = useState(false);
   const [emailMessage, setEmailmessage] = useState('');
+  const [disable, setDisable] = useState(0);
 
   const handleOnChange=(e)=> {
     setEmail(e.target.value);
   }
+
 
   const emailValidation=()=> {
     const regEx = /[a-zA-Z0-9,_%+-]+@[a-z0-9*-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
@@ -26,12 +30,28 @@ function Contact() {
 
   const handleSubmit=(e) => {
     e.preventDefault();
-    if(firstName.length===0||lastName.length===0||email.length===0||message.length===0||check.length===0){
+    if(firstName.length===0||lastName.length===0||email.length===0||message.length===0){
       setError(true)
     }
+
+    if(check.length===0){
+      setError(true)
+    }else{
+      setDisable(false)
+    }
+
     if(firstName&&lastName&&email&&message&&check){
-      console.log("first Name:",firstName,"\nLast Nmae:", lastName, "\nEmail:", email,"\nMessage:", message,"\nCheckbox:", check); 
+      console.log("first Name:",firstName,"\nLast Name:", lastName, "\nEmail:", email,"\nMessage:", message,"\nCheckbox:", check); 
     }   
+
+  }
+
+  const submit = () => {
+    Swal.fire(
+      'Good job!',
+      'Your form has been submitted!',
+      'success'
+    )
   }
 
 
@@ -78,9 +98,10 @@ function Contact() {
             {error&& check.length<=0 ?  <p class="hint2 mt-2 mx-2">check the box</p> : ""}
           </div>
 
-          <div>
-            <button id="btn__submit" onClick={emailValidation} className="mt-3 w-[343px] lg:w-[720px] bg-[#1570EF] hover:bg-[#B2DDFF] ring-opacity-25  focus:ring-4 ring-[#84CAFF]">Send message</button>
+          <div onClick={submit}>
+            {disable ? <button id="btn__submit" onClick={emailValidation}  className="mt-3 w-[343px] lg:w-[720px] bg-[#84CAFF] ring-opacity-25  focus:ring-4 ring-[#84CAFF]">Send message</button> :  <button id="btn__submit" onClick={emailValidation}  className="mt-3 w-[343px] lg:w-[720px] bg-[#1570EF] ring-opacity-25  focus:ring-4 ring-[#1570EF]">Send message</button>}
           </div>
+
 
           </form>
       </div>
