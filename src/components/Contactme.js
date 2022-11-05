@@ -23,12 +23,18 @@ function Contact() {
       alert("Email is not valid")
       
     }else{
+      Swal.fire(
+        'Opps!',
+        'Your form has not been completed!',
+        'error'
+      )
       setEmailmessage("");
     }
   }
 
   const handleSubmit=(e) => {
     e.preventDefault();
+
     // if inputs are not filled don submit
 
     if(firstName.length===0||lastName.length===0||email.length===0||message.length===0||check.length===0){
@@ -103,7 +109,7 @@ function Contact() {
           <div className="mt-3">
             <div className="flex">
             <input onChange={e=>setCheck(e.target.value)} type="checkbox" id="text" className="checkbox mx-2 mb-3 ring-opacity-25  focus:ring-2 ring-[#84CAFF] focus:border-[#84CAFF] border border-[#D0D5DD] focus:outline-none"/>
-            <label  for="text lg:w-[688px] w-[311px] md:w-[30px]">You agree to providing your data to Preshypie who may contact you.</label>
+            <label  for="text lg:w-[688px] w-[311px] md:w-[30px]">You agree to providing your data to Precious Egwuenu who may contact you.</label>
             </div>       
             {error&& check.length<=0 ?  <p class="hint2 mt-2 mx-2">Please check the box to proceed!</p> : ""}
           </div>
