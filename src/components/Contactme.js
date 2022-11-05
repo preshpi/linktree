@@ -9,9 +9,6 @@ function Contact() {
   const [check, setCheck] = useState('');
   const [error, setError] = useState(false);
   const [emailMessage, setEmailmessage] = useState('');
-  const [invalid, setInvalid] = useState('');
-
-  
 
   const handleOnChange=(e)=> {
     setEmail(e.target.value);
@@ -90,17 +87,12 @@ function Contact() {
 
           <div className="mt-3">
             <label className="name" for="email">Email</label>
-            <input onChange={e=>setEmail(e.target.value)}  className={error&& email.length<=0 ? 'errorname mt-3 w-[343px] lg:w-[720px] focus:outline-none border border-[#F83F23]' : 'inputname mt-3  w-[343px] lg:w-[720px] focus:outline-none focus:border focus:border-[#84CAFF]  border border-[#D0D5DD]' } id="email" placeholder="yourname@email.com" value={email} onChange={handleOnChange}/>
+            <input onChange={e=>setEmail(e.target.value)}  className={error&& email.length<=0 ? 'errorname mt-3 w-[343px] lg:w-[720px] focus:outline-none border border-[#F83F23]' :
+             'inputname mt-3  w-[343px] lg:w-[720px] focus:outline-none focus:border focus:border-[#84CAFF]  border border-[#D0D5DD]' } id="email" placeholder="yourname@email.com" 
+             value={email} onChange={handleOnChange}/>
             <p className="hint2 mt-2">{emailMessage}</p>
             {error&& email.length<=0 ? <p class="hint2 mt-2">Please enter your email</p> : ""}
           </div>
-
-          {/* <div className="mt-3">
-            <label className="name" for="email">Email</label>
-            <input onChange={e=>setEmail(e.target.value)}  className={error&& email.length<=0 ? 'errorname mt-3 w-[343px] lg:w-[720px] md:w-[626px] focus:outline-none border border-[#F83F23]' : 'inputname mt-3 mb-3 w-[343px] lg:w-[720px]  md:w-[626px] focus:outline-none focus:border focus:border-[#84CAFF]  border border-[#D0D5DD]' } id="email" placeholder="yourname@email.com"  onChange={handleOnChange}/>
-            {error&& email.length<=0 ? <p className="hint2 mt-2">Email is not valid!</p> : "" && setEmail }
-            {error&& email.length<=0 ? <p class="hint2 mt-2">Please enter your email</p> : ""}
-          </div> */}
 
           <div className="mt-3">
             <label className="name" for="message">Message</label>
